@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cart</title>
+
+    <link rel="icon"
+          type="image/gif"
+          href="b4aaaa9f-1bb2-49bd-952c-345154653c41.gif">
+
+    <!-- Use a relative path to your CSS -->
+    <link rel="stylesheet"
+          href="./CSS_Coding/Cart.css">
+
+</head>
+
+
+<body>
+<!-- testing -->
+    <!-- =====================================================
+         DAY / NIGHT SWITCH
+         ===================================================== -->
+
+    <input
+        type="checkbox"
+        id="night-mode"
+    >
+
+    <label
+        for="night-mode"
+        class="theme-switch"
+        aria-label="Toggle light and dark mode"
+    >
+
+        <span class="sun">☀️</span>
+
+        <span class="moon">🌙</span>
+
+    </label>
+
+
+    <!-- =====================================================
+         MAIN PAGE
+         ===================================================== -->
+
+    <div class="page">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <center>
+
+            <a href="Index.html">
+
+                <h1>NovaLink</h1>
+
+            </a>
+
+        </center>
+
+
+        <hr size="3"
+            width="100%"
+            color="black">
+
+
+        <!-- =================================================
+             CART
+             ================================================= -->
+
+        <div class="cart-container">
+
+            <center>
+
+                <h2>Your Shopping Cart is Empty</h2>
+
+
+                <p>
+                    You currently have no items in your cart.
+                </p>
+
+
+                <p>
+                    Browse our products and add something
+                    to your cart.
+                </p>
+
+
+                <br>
+
+
+                <img
+                    src="1OIP.jpg"
+                    alt="Empty Shopping Cart"
+                    width="150"
+                    height="150"
+                >
+
+
+                <br>
+                <br>
+
+
+                <a
+                    href="Products.html"
+                    class="shop-button"
+                >
+                    Back to Shopping?
+                </a>
+
+            </center>
+
+        </div>
+
+
+        <br>
+
+
+        <hr size="3"
+            width="100%"
+            color="black">
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer>
+
+            <center>
+
+                <p>
+                    &copy; 2023 NovaLink.
+                    All rights reserved.
+                </p>
+
+
+                <p>
+
+                    <a href="./website/Contact.html">
+                        Contact Us
+                    </a>
+
+                    |
+
+                    <a href="./website/About.html">
+                        About Us
+                    </a>
+
+                    |
+
+                    <a href="Products.html">
+                        Products
+                    </a>
+
+                </p>
+
+            </center>
+
+        </footer>
+
+
+        <!-- AI assisted in cleaning up the code -->
+
+    </div><script src="./JS_Coding/general.js"></script>
+
+
+    <!-- =====================================================
+         REMEMBER THEME ACROSS ALL NOVALINK PAGES
+         ===================================================== -->
+
+    <script>
+
+        const themeToggle =
+            document.getElementById("night-mode");
+
+
+        /* Check if the user already selected a theme */
+
+        const savedTheme =
+            localStorage.getItem("novalink-theme");
+
+
+        if (savedTheme === "light") {
+
+            themeToggle.checked = true;
+
+        }
+
+        else if (savedTheme === "dark") {
+
+            themeToggle.checked = false;
+
+        }
+
+        else {
+
+            /* No saved preference:
+               use the device theme */
+
+            const deviceDark =
+                window.matchMedia(
+                    "(prefers-color-scheme: dark)"
+                ).matches;
+
+
+            themeToggle.checked = !deviceDark;
+
+        }
+
+
+        /* Save the user's choice */
+
+        themeToggle.addEventListener(
+            "change",
+            function () {
+
+                if (this.checked) {
+
+                    localStorage.setItem(
+                        "novalink-theme",
+                        "light"
+                    );
+
+                }
+
+                else {
+
+                    localStorage.setItem(
+                        "novalink-theme",
+                        "dark"
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

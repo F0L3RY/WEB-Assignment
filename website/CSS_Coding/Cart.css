@@ -1,0 +1,419 @@
+/* =========================================================
+   THEME SYSTEM
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+/* Hide checkbox */
+
+#night-mode {
+    display: none;
+}
+
+
+/* =========================================================
+   THEME SWITCH
+   ========================================================= */
+
+.theme-switch {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    width: 65px;
+    height: 35px;
+
+    background-color: #444;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7px;
+
+    z-index: 1000;
+
+    transition: 0.4s ease;
+}
+
+.theme-switch .sun,
+.theme-switch .moon {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   DARK MODE - DEFAULT
+   ========================================================= */
+
+.page {
+    min-height: 100vh;
+
+    padding: 20px;
+
+    background-color: #121212;
+    color: white;
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease;
+}
+
+
+/* Dark mode text */
+
+.page h1,
+.page h2,
+.page h3 {
+    color: white;
+
+    transition: color 0.4s ease;
+}
+
+.page p {
+    color: #dddddd;
+
+    transition: color 0.4s ease;
+}
+
+.page a {
+    color: #66b3ff;
+
+    transition: color 0.3s ease;
+}
+
+
+/* =========================================================
+   LIGHT MODE
+   ========================================================= */
+
+#night-mode:checked ~ .page {
+    background-color: #808080;
+    color: black;
+}
+
+#night-mode:checked ~ .page h1,
+#night-mode:checked ~ .page h2,
+#night-mode:checked ~ .page h3 {
+    color: black;
+}
+
+#night-mode:checked ~ .page p {
+    color: #222222;
+}
+
+#night-mode:checked ~ .page a {
+    color: #003366;
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.page table {
+    background-color: #1e1e1e;
+    color: white;
+
+    border-color: #666;
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        box-shadow 0.3s ease;
+}
+
+.page td {
+    border-color: #666;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Light mode tables */
+
+#night-mode:checked ~ .page table {
+    background-color: #b0b0b0;
+    color: black;
+}
+
+#night-mode:checked ~ .page td {
+    border-color: #333;
+}
+
+
+/* =========================================================
+   TABLE HOVER
+   ========================================================= */
+
+.page table td:hover {
+    transform: translateY(-5px);
+
+    background-color: #000;
+
+    box-shadow: 0 8px 20px purple;
+}
+
+
+/* Light mode hover */
+
+#night-mode:checked ~ .page table td:hover {
+    background-color: #999;
+
+    box-shadow: 0 8px 20px cyan;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.page button {
+    background-color: #333;
+
+    color: white;
+
+    border: 1px solid #777;
+
+    padding: 10px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.page button:hover {
+    box-shadow: 0 0 12px purple;
+}
+
+
+/* Light mode */
+
+#night-mode:checked ~ .page button {
+    background-color: #d0d0d0;
+
+    color: black;
+
+    border-color: #333;
+}
+
+#night-mode:checked ~ .page button:hover {
+    box-shadow: 0 0 12px cyan;
+}
+
+
+/* =========================================================
+   HORIZONTAL RULE
+   ========================================================= */
+
+.page hr {
+    border-color: #666;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 10px;
+    }
+
+    .theme-switch {
+        top: 10px;
+        right: 10px;
+
+        width: 60px;
+        height: 32px;
+    }
+
+    .theme-switch .sun,
+    .theme-switch .moon {
+        font-size: 16px;
+    }
+
+    .page h1 {
+        font-size: 1.7rem;
+    }
+
+    .page h2 {
+        font-size: 1.35rem;
+    }
+
+    .page h3 {
+        font-size: 1.1rem;
+    }
+
+    .page p {
+        font-size: 0.9rem;
+
+        line-height: 1.5;
+    }
+
+    .page table {
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow-x: auto;
+
+        font-size: 0.85rem;
+    }
+
+    .page td {
+        padding: 8px;
+    }
+
+    .page img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Don't make cells jump on phones */
+
+    .page table td:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .page {
+        padding: 15px;
+    }
+
+    .page table {
+        width: 95%;
+    }
+
+    .page img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+/* =========================================================
+   PC
+   ========================================================= */
+
+@media (min-width: 1025px) {
+
+    .page {
+        padding: 20px 30px;
+    }
+
+    .page table {
+        width: 80%;
+    }
+}
+
+/* Shopping cart layout */
+
+.cart-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.shopping-cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.shopping-cart-table th,
+.shopping-cart-table td {
+    padding: 12px;
+    border: 1px solid #777;
+    text-align: center;
+}
+
+.shopping-cart-table button,
+.cart-container > button {
+    padding: 8px 12px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.cart-summary {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #777;
+    border-radius: 8px;
+}
+
+.cart-summary p {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.add-to-cart {
+    display: block;
+    margin: 12px auto;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.shop-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 16px;
+    text-decoration: none;
+    border: 1px solid #777;
+    border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+    .cart-container {
+        padding: 8px;
+    }
+
+    .shopping-cart-table {
+        font-size: 0.8rem;
+    }
+
+    .shopping-cart-table th,
+    .shopping-cart-table td {
+        padding: 6px;
+    }
+}

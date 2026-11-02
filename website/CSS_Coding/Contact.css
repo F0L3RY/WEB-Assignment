@@ -1,0 +1,772 @@
+/* =========================================================
+   GLOBAL THEME SYSTEM
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #121212;
+
+    color: white;
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease;
+}
+
+
+/* =========================================================
+   HIDE CHECKBOX
+   ========================================================= */
+
+#night-mode {
+    display: none;
+}
+
+
+/* =========================================================
+   THEME SWITCH
+   ========================================================= */
+
+.theme-switch {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    width: 65px;
+    height: 35px;
+
+    background-color: #444;
+
+    border: 1px solid #777;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 0 10px purple;
+
+    transition:
+        background-color 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.4s ease;
+
+    z-index: 1000;
+}
+
+
+.theme-switch:hover {
+    transform: scale(1.08);
+}
+
+
+.theme-switch .sun,
+.theme-switch .moon {
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   MAIN PAGE — NIGHT MODE
+   ========================================================= */
+
+.page {
+    min-height: 100vh;
+
+    width: 100%;
+
+    background-color: #121212;
+
+    color: white;
+
+    padding: 20px 30px;
+
+    box-sizing: border-box;
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease;
+}
+
+
+/* =========================================================
+   HEADINGS — NIGHT MODE
+   ========================================================= */
+
+.page h1,
+.page h2,
+.page h3 {
+    color: white;
+
+    transition:
+        color 0.4s ease,
+        transform 0.3s ease;
+}
+
+
+.page h1:hover {
+    color: purple;
+
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   PARAGRAPHS — NIGHT MODE
+   ========================================================= */
+
+.page p {
+    color: #dddddd;
+
+    line-height: 1.6;
+
+    transition:
+        color 0.4s ease;
+}
+
+
+/* =========================================================
+   LINKS — NIGHT MODE
+   ========================================================= */
+
+.page a {
+    color: #66b3ff;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+
+.page a:hover {
+    color: purple;
+
+    text-shadow:
+        0 0 8px purple;
+}
+
+
+/* =========================================================
+   HORIZONTAL RULE
+   ========================================================= */
+
+.page hr {
+    border: none;
+
+    border-top: 2px solid #666;
+
+    margin: 20px 0;
+
+    transition:
+        border-color 0.4s ease;
+}
+
+
+/* =========================================================
+   CONTACT CONTENT
+   ========================================================= */
+
+.page > center:nth-of-type(2) {
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: 30px auto;
+
+    padding: 35px 30px 40px;
+
+    background-color: #1e1e1e;
+
+    border: 1px solid #555;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 10px purple,
+        0 10px 30px rgba(0, 0, 0, 0.5);
+
+    transition:
+        background-color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* =========================================================
+   CONTACT HEADING
+   ========================================================= */
+
+.page h2 {
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    font-size: 1.8rem;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.page > center:nth-of-type(2) > b > p {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: #dddddd;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.page form {
+    width: 100%;
+
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   FORM LABELS
+   ========================================================= */
+
+.page form label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #eeeeee;
+
+    font-weight: bold;
+
+    transition:
+        color 0.4s ease;
+}
+
+
+/* =========================================================
+   FORM INPUTS
+   ========================================================= */
+
+.page form input[type="text"],
+.page form input[type="email"],
+.page form input[type="tel"],
+.page form textarea {
+
+    width: 100%;
+
+    padding: 12px 14px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 1rem;
+
+    color: white;
+
+    background-color: #2a2a2a;
+
+    border: 1px solid #666;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.page form textarea {
+
+    min-height: 140px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   INPUT HOVER
+   ========================================================= */
+
+.page form input[type="text"]:hover,
+.page form input[type="email"]:hover,
+.page form input[type="tel"]:hover,
+.page form textarea:hover {
+
+    border-color: #999;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+   ========================================================= */
+
+.page form input[type="text"]:focus,
+.page form input[type="email"]:focus,
+.page form input[type="tel"]:focus,
+.page form textarea:focus {
+
+    border-color: purple;
+
+    box-shadow:
+        0 0 5px purple,
+        0 0 15px rgba(128, 0, 128, 0.6);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.page form input[type="submit"] {
+
+    display: block;
+
+    width: 160px;
+
+    margin: 10px auto 0;
+
+    padding: 12px 20px;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    color: white;
+
+    background-color: black;
+
+    border: 1px solid #777;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 10px purple;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.page form input[type="submit"]:hover {
+
+    background-color: purple;
+
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 10px purple,
+        0 5px 20px rgba(128, 0, 128, 0.8);
+}
+
+
+.page form input[type="submit"]:active {
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   FOOTER — NIGHT MODE
+   ========================================================= */
+
+.page footer {
+
+    width: 100%;
+
+    padding: 10px 0 20px;
+
+    color: #dddddd;
+
+    text-align: center;
+}
+
+
+.page footer p {
+
+    color: #dddddd;
+
+    margin: 10px 0;
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   DAY MODE
+   ========================================================= */
+
+#night-mode:checked ~ .page {
+
+    background-color: #808080;
+
+    color: black;
+}
+
+
+/* =========================================================
+   DAY MODE HEADINGS
+   ========================================================= */
+
+#night-mode:checked ~ .page h1,
+#night-mode:checked ~ .page h2,
+#night-mode:checked ~ .page h3 {
+
+    color: black;
+}
+
+
+#night-mode:checked ~ .page h1:hover {
+
+    color: #003366;
+}
+
+
+/* =========================================================
+   DAY MODE PARAGRAPHS
+   ========================================================= */
+
+#night-mode:checked ~ .page p {
+
+    color: #222;
+}
+
+
+/* =========================================================
+   DAY MODE LINKS
+   ========================================================= */
+
+#night-mode:checked ~ .page a {
+
+    color: #003366;
+}
+
+
+#night-mode:checked ~ .page a:hover {
+
+    color: #006666;
+
+    text-shadow:
+        0 0 8px cyan;
+}
+
+
+/* =========================================================
+   DAY MODE HORIZONTAL RULE
+   ========================================================= */
+
+#night-mode:checked ~ .page hr {
+
+    border-top-color: #333;
+}
+
+
+/* =========================================================
+   DAY MODE CONTACT BOX
+   ========================================================= */
+
+#night-mode:checked ~ .page > center:nth-of-type(2) {
+
+    background-color: #b0b0b0;
+
+    border-color: #555;
+
+    box-shadow:
+        0 0 10px cyan,
+        0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   DAY MODE LABELS
+   ========================================================= */
+
+#night-mode:checked ~ .page form label {
+
+    color: #222;
+}
+
+
+/* =========================================================
+   DAY MODE INPUTS
+   ========================================================= */
+
+#night-mode:checked ~ .page form input[type="text"],
+#night-mode:checked ~ .page form input[type="email"],
+#night-mode:checked ~ .page form input[type="tel"],
+#night-mode:checked ~ .page form textarea {
+
+    background-color: #d0d0d0;
+
+    color: black;
+
+    border-color: #555;
+}
+
+
+/* =========================================================
+   DAY MODE INPUT FOCUS
+   ========================================================= */
+
+#night-mode:checked ~ .page form input[type="text"]:focus,
+#night-mode:checked ~ .page form input[type="email"]:focus,
+#night-mode:checked ~ .page form input[type="tel"]:focus,
+#night-mode:checked ~ .page form textarea:focus {
+
+    border-color: cyan;
+
+    box-shadow:
+        0 0 5px cyan,
+        0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+
+/* =========================================================
+   DAY MODE BUTTON
+   ========================================================= */
+
+#night-mode:checked ~ .page form input[type="submit"] {
+
+    background-color: #d0d0d0;
+
+    color: black;
+
+    border-color: #333;
+
+    box-shadow:
+        0 0 10px cyan;
+}
+
+
+#night-mode:checked ~ .page form input[type="submit"]:hover {
+
+    background-color: #999999;
+
+    color: black;
+
+    box-shadow:
+        0 0 10px cyan,
+        0 5px 20px rgba(0, 255, 255, 0.7);
+}
+
+
+/* =========================================================
+   DAY MODE FOOTER
+   ========================================================= */
+
+#night-mode:checked ~ .page footer,
+#night-mode:checked ~ .page footer p {
+
+    color: #222;
+}
+
+
+/* =========================================================
+   DAY MODE SWITCH
+   ========================================================= */
+
+#night-mode:checked + .theme-switch {
+
+    background-color: #d0d0d0;
+
+    border-color: #333;
+
+    box-shadow:
+        0 0 10px cyan;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1025px) {
+
+    .page {
+        padding: 20px 30px;
+    }
+
+    .page h1 {
+        font-size: 2.2rem;
+    }
+
+    .page h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .page {
+        padding: 15px;
+    }
+
+    .page h1 {
+        font-size: 2rem;
+    }
+
+    .page h2 {
+        font-size: 1.6rem;
+    }
+
+    .theme-switch {
+        top: 15px;
+
+        right: 15px;
+    }
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 10px;
+    }
+
+    .page h1 {
+        font-size: 1.6rem;
+    }
+
+    .page h2 {
+        font-size: 1.35rem;
+    }
+
+    .theme-switch {
+        top: 10px;
+
+        right: 10px;
+
+        width: 60px;
+
+        height: 32px;
+
+        padding: 0 6px;
+    }
+
+    .theme-switch .sun,
+    .theme-switch .moon {
+        font-size: 16px;
+    }
+
+    .page > center:nth-of-type(2) {
+
+        width: 100%;
+
+        margin: 20px auto;
+
+        padding: 25px 15px 30px;
+
+        border-radius: 10px;
+    }
+
+    .page form input[type="text"],
+    .page form input[type="email"],
+    .page form input[type="tel"],
+    .page form textarea {
+
+        padding: 10px 12px;
+
+        font-size: 0.9rem;
+    }
+
+    .page form textarea {
+
+        min-height: 120px;
+    }
+
+    .page form input[type="submit"] {
+
+        width: 100%;
+
+        max-width: 200px;
+    }
+
+    .page footer p {
+
+        font-size: 0.85rem;
+
+        line-height: 1.5;
+    }
+
+    .page footer a {
+
+        display: inline-block;
+
+        margin: 3px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .page,
+    .page *,
+    .theme-switch {
+
+        transition: none !important;
+    }
+}
